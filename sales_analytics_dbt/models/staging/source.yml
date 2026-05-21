@@ -1,0 +1,12 @@
+version: 2
+
+sources:
+  - name: raw
+    schema: raw
+
+    tables:
+      - name: crm_clients
+      - name: crm_commercial
+      - name: crm_sales_2024
+      - name: crm_sales_2025
+      - name: erp_products

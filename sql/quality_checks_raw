@@ -1,0 +1,29 @@
+-- QUALITY CHECKS - RAW LAYER
+
+-- VOLUME TABLES
+SELECT 'crm_sales_2024' AS table_name, COUNT(*) AS row_count FROM raw.crm_sales_2024 
+UNION ALL
+SELECT 'crm_sales_2025' AS table_name, COUNT(*) AS row_count FROM raw.crm_sales_2025
+UNION ALL
+SELECT 'crm_clients' AS table_name, COUNT(*) AS row_count FROM raw.crm_clients
+UNION ALL
+SELECT 'erp_products' AS table_name, COUNT(*) AS row_count FROM raw.erp_products
+UNION ALL
+SELECT 'crm_commercial' AS table_name, COUNT(*) AS row_count FROM raw.crm_commercial;
+
+-- VALEURS NULL
+SELECT
+    COUNT(*) FILTER (WHERE "Id_client" IS NULL) AS id_client_null,
+    COUNT(*) FILTER (WHERE "CA" IS NULL) AS ca_null FROM raw.crm_sales_2024;
+
+-- DOUBLONS
+SELECT
+    "Id_client",
+    "ID_Produit",
+    "mois vente",
+    "Annee_vente",
+    COUNT(*)
+FROM raw.crm_sales_2024 GROUP BY 1,2,3,4 HAVING COUNT(*) > 1;
+
+-- APERÇU
+SELECT * FROM raw.crm_sales_2024 LIMIT 10;

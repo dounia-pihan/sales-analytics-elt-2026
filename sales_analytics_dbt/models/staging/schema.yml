@@ -1,0 +1,183 @@
+version: 2
+
+models:
+
+  - name: stg_crm_sales_2024
+    description: "Cleaned CRM sales transactions for 2024"
+    columns:
+      - name: id_client
+        description: "Client identifier associated with the sale."
+        data_tests:
+          - not_null
+          - relationships:
+              to: ref('stg_crm_clients')
+              field: id_client
+
+      - name: id_product
+        description: "Product identifier associated with the sale"
+        data_tests:
+          - not_null
+          - relationships:
+              to: ref('stg_erp_products')
+              field: id_product
+
+      - name: id_commercial
+        description: "Sales representative identifier associated with the sale"
+        data_tests:
+          - not_null
+          - relationships:
+              to: ref('stg_crm_commercial')
+              field: id_commercial
+
+      - name: mois_vente
+        description: "Month of the sale"
+        data_tests:
+          - not_null
+          - accepted_values:
+              values: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+              quote: false
+
+      - name: annee_vente
+        description: "Year of the sale"
+        data_tests:
+          - not_null
+          - accepted_values:
+              values: [2024]
+              quote: false
+
+      - name: volume_m
+        description: "Sales volume"
+      
+      - name: ca
+        description: "Sales revenue amount (text to numeric)"
+        data_tests:
+          - not_null
+
+      - name: loaded_at
+        description: "Timestamp indicating when the staging model was generated"
+
+  - name: stg_crm_sales_2025
+    description: "Cleaned CRM sales transactions for 2025"
+    columns:
+      - name: id_client
+        description: "Client identifier associated with the sale"
+        data_tests:
+          - not_null
+          - relationships:
+              to: ref('stg_crm_clients')
+              field: id_client
+
+      - name: id_product
+        description: "Product identifier associated with the sale"
+        data_tests:
+          - not_null
+          - relationships:
+              to: ref('stg_erp_products')
+              field: id_product
+
+      - name: id_commercial
+        description: "Sales representative identifier associated with the sale"
+        data_tests:
+          - not_null
+          - relationships:
+              to: ref('stg_crm_commercial')
+              field: id_commercial
+
+      - name: mois_vente
+        description: "Month of the sale"
+        data_tests:
+          - not_null
+          - accepted_values:
+              values: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+              quote: false
+
+      - name: annee_vente
+        description: "Year of the sale"
+        data_tests:
+          - not_null
+          - accepted_values:
+              values: [2025]
+              quote: false
+
+      - name: volume_m
+        description: "Sales volume"
+
+      - name: ca
+        description: "Sales revenue amount (text to numeric)"
+        data_tests:
+          - not_null
+
+      - name: loaded_at
+        description: "Timestamp indicating when the staging model was generated"
+
+  - name: stg_crm_clients
+    description: "Cleaned client reference table from CRM"
+    columns:
+      - name: id_client
+        description: "Unique client identifier"
+        data_tests:
+          - not_null
+          - unique
+
+      - name: client_level_1
+        description: "First level of the client hierarchy"
+      - name: client_level_2
+        description: "Second level of the client hierarchy"
+      - name: client_level_3
+        description: "Third level of the client hierarchy"
+      - name: client_level_4
+        description: "Fourth level of the client hierarchy"
+      - name: region
+        description: "Client sales region"
+        data_tests:
+          - not_null
+
+      - name: departement
+        description: "Client department"
+
+      - name: loaded_at
+        description: "Timestamp indicating when the staging model was generated"
+
+  - name: stg_erp_products
+    description: "Cleaned product reference table from ERP"
+    columns:
+      - name: id_product
+        description: "Unique product identifier"
+        data_tests:
+          - not_null
+          - unique
+
+      - name: product_level_1
+        description: "Main product hierarchy level"
+      - name: product_level_1_group
+        description: "Alternative main product hierarchy label"
+      - name: product_level_1_group_order
+        description: "Sort order for the alternative main product hierarchy"
+      - name: product_level_2
+        description: "Local product group"
+      - name: product_level_2_group
+        description: "Alternative local product group"
+      - name: product_level_2_group_order
+        description: "Sort order for the alternative local product group"
+      - name: product_level_3
+        description: "Local product subgroup"
+      - name: product_level_4
+        description: "Local product model"
+      - name: product_level_5
+        description: "Fifth level of the local product hierarchy"
+      - name: loaded_at
+        description: "Timestamp indicating when the staging model was generated."
+
+  - name: stg_crm_commercial
+    description: "Cleaned commercial reference table from CRM"
+    columns:
+      - name: id_commercial
+        description: "Unique sales representative identifier"
+        data_tests:
+          - not_null
+          - unique
+
+      - name: sales_director
+        description: "Sales director"
+      - name: loaded_at
+        description: "Timestamp indicating when the staging model was generated."

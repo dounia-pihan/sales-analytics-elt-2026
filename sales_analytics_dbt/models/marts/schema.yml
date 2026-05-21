@@ -1,0 +1,48 @@
+version: 2
+
+models:
+
+  - name: dim_clients
+    columns:
+      - name: id_client
+        tests:
+          - not_null
+          - unique
+
+  - name: dim_products
+    columns:
+      - name: id_product
+        tests:
+          - not_null
+          - unique
+
+  - name: dim_commercial
+    columns:
+      - name: id_commercial
+        tests:
+          - not_null
+          - unique
+
+  - name: fact_sales
+    columns:
+
+      - name: id_client
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_clients')
+              field: id_client
+
+      - name: id_product
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_products')
+              field: id_product
+
+      - name: id_commercial
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_commercial')
+              field: id_commercial
