@@ -31,7 +31,7 @@ Short walkthrough of a Power BI sales analytics dashboard built on top of a Post
 
 🔍 For optimal readability of KPIs, charts and tables, please watch the video in the highest available quality.
 
-[![Dashboard_Demo](sales_analytics_dbt/assets/demo_thumbnail.png)](https://youtu.be/9O_DEE_z21k)
+[![Dashboard_Demo](sales_analytics_dbt/assets/Dashboard_Demo.jpg)](https://youtu.be/9O_DEE_z21k)
 
 ---
 
