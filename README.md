@@ -1,3 +1,7 @@
+
+
+
+
 # 📊 Sales Analytics ELT Project
 
 ## End-to-End Analytics Pipeline with PostgreSQL, dbt and Power BI
@@ -23,7 +27,11 @@ The resulting data model is designed to support sales reporting and analysis acr
 
 ## 🎥 Dashboard Demonstration
 
-🚧 Video demonstration coming soon.
+Short walkthrough of a Power BI sales analytics dashboard built on top of a PostgreSQL and dbt ELT pipeline.
+
+🔍 For optimal readability of KPIs, charts and tables, please watch the video in the highest available quality.
+
+[![Dashboard_Demo](sales_analytics_dbt/assets/demo_thumbnail.png)](https://youtu.be/9O_DEE_z21k)
 
 ---
 
