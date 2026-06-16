@@ -147,7 +147,7 @@ Implemented validations include:
 
 All tests successfully passed during project execution.
 
-![dbt Tests](assets/dbt_tests.png)
+![dbt Tests](sales_analytics_dbt/assets/dbt_tests.png)
 
 
 ## 📊 Power BI Dashboard
