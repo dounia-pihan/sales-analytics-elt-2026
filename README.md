@@ -29,9 +29,9 @@ The resulting data model is designed to support sales reporting and analysis acr
 
 Short walkthrough of the Power BI sales analytics dashboard built on top of a PostgreSQL and dbt ELT pipeline.
 
-💡 For optimal readability of KPIs, charts and tables, please watch the video in the highest available quality (1080p or higher).
+💡 For optimal readability of KPIs, charts and tables, please watch the video in the highest available quality (1080p or higher) and fullscreen mode.
 
-[![Dashboard_Demo](sales_analytics_dbt/assets/Dashboard_Demo.jpg)](https://youtu.be/9O_DEE_z21k)
+[![Dashboard_Demo](sales_analytics_dbt/assets/Dashboard_Demo.jpg)](https://youtu.be/BMXigZzpxKQ)
 
 ---
 
